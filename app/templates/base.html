@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Successful Hip-Hop Artists</title>
+        {% else %}
+        <title>Successful Hip-Hop Artists</title>
+        {% endif %}
+    </head>
+    <body>
+        <div>Hip-Hop Artists
+            <a href="/index">Home</a></div>
+            <a href="/artistList">List of Artists</a>
+            <a href="/artistPage">Specific Artists</a>
+            <a href="/createArtist">Create New Artist</a>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
 </html>
