@@ -2,7 +2,37 @@
 
 {% block content %}
     <h1> Create New Artist </h1>
-    <div>
-        <p> Under Construction</p>
-    </div>
+    <form action="" method="post" novalidate>
+        {{ create.hidden_tag() }}
+         <p>
+            {{ create.name.label }}<br>
+            {{ create.name(size=30) }}<br>
+            {% for error in create.name.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+            <p>
+            {{ create.birth.label }}<br>
+            {{ create.birth(size=30) }}<br>
+            {% for error in create.birth.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+            <p>
+            {{ create.music.label }}<br>
+            {{ create.music(size=100) }}<br>
+            {% for error in create.music.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+            <p>
+            {{ create.events.label }}<br>
+            {{ create.events(size=100) }}<br>
+            {% for error in create.events.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>{{ create.submit() }}</p>
+    </form>
 {% endblock %}
