@@ -3,36 +3,37 @@
 {% block content %}
     <h1> Create New Artist </h1>
     <form action="" method="post" novalidate>
-        {{ create.hidden_tag() }}
+        {{ createForm.hidden_tag() }}
          <p>
-            {{ create.name.label }}<br>
-            {{ create.name(size=30) }}<br>
-            {% for error in create.name.errors %}
+            {{ createForm.name.label }}<br>
+            {{ createForm.name(size=30) }}<br>
+            {% for error in createForm.name.errors %}
                 <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
             <p>
-            {{ create.birth.label }}<br>
-            {{ create.birth(size=30) }}<br>
-            {% for error in create.birth.errors %}
+            {{ createForm.birth.label }}<br>
+            {{ createForm.birth(size=30) }}<br>
+            {% for error in createForm.birth.errors %}
                 <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
             <p>
-            {{ create.music.label }}<br>
-            {{ create.music(size=100) }}<br>
-            {% for error in create.music.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </p>
-            <p>
-            {{ create.events.label }}<br>
-            {{ create.events(size=100) }}<br>
-            {% for error in create.events.errors %}
+            {{ createForm.hometown.label }}<br>
+            {{ createForm.hometown(size=30) }}<br>
+            {% for error in createForm.hometown.errors %}
                 <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
 
-        <p>{{ create.submit() }}</p>
+            <p>
+            {{ createForm.description.label }}<br>
+            {{ createForm.description(size=100) }}<br>
+            {% for error in createForm.description.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>{{ createForm.submit() }}</p>
     </form>
 {% endblock %}
